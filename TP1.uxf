@@ -1,0 +1,174 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>200</x><y>0</y><w>210</w><h>130</h></coordinates><panel_attributes>AgenciaDeViajes
+--
+ - List&lt;Sucursal&gt; sucursales
+ -  List&lt;Servicios&gt; servicios
+--
++agregarSucursal(Sucursal sucursal)
++agregarServicio(Servicios servicio)
++consultarSucursal(codSuc)
++consultarServicio(codigo)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>0</y><w>310</w><h>160</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Servicios
+--
+-  List&lt;Turista&gt;  turistas
+--
++List&lt;Turistas&gt; consultarClientes(codTurista,nombre)
+
++agregarCliente(nombre,apellidos,direccion,
+                             teléfono,codSuc)
+
++consultarSucursalAsignada()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>790</x><y>430</y><w>260</w><h>250</h></coordinates><panel_attributes>Turista
+--
+
+ -  codTurista:String
+ -  nombre: String
+ -  apellidos: Int
+ -  dirección
+ - telefono
+ - codigoSucContratada
+
+--
+Turista(nombre,apellidos,codTur,teléfono     
+               dirección, codigoSuc)
+
++imprimirDatos()
+
++consultarCodTur()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>0</y><w>290</w><h>390</h></coordinates><panel_attributes>Hotel
+--
+-	codigoHotel:Int
+-	nombre :String
+-	direccion:String
+-	ciudad:String
+-	telefono:Int
+-	email: String
+-	plazasDisp: Int
+-	Hospedaje hospedaje
+-	List&lt;Turista&gt; turistaHotel
+-	codigoDeSucursal:String
+--
+Hotel( codigoHotel , nombre , dirección , ciudad
+           , teléfono , email , numPlazas , codDeSuc  )
+
++consultarCodHotel()
+
++consultarClientes(codTurista,nombre)
+
++consultarNumPlazasLibres()
+
++agregarCliente(nombre,apellidos,direccion
+                         ,teléfono,codSuc)
+
++consultarSucursalAsignada()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>210</y><w>280</w><h>390</h></coordinates><panel_attributes>Vuelo
+--
+-	numVuelo:Int
+-	fecha : Date
+-	origen:String
+-	destino:String
+-	numPlazasTot:Int
+-	numPlazasTurl:Int
+-	ClaseVuelo clasevuelo
+-	List&lt;Turista&gt; turistasVuelos
+-	codigoDeSucursal: String
+
+--
++consultarNumVuelo()
+
++consultarPlazasTot()
+
++consultarClase()
+
++agregarCliente(nombre , apellidos , direccion ,
+                           teléfono  ,codSuc)
+
++consultarClientes(codTurista,nombre)
+
++Vuelo(codDeSuc , claseVuelo , org , des ,
+              fechanumVuelo , numPlazasTot  )
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>230</y><w>150</w><h>170</h></coordinates><panel_attributes>Sucursal
+--
+-  codSucursal:String
+ -  direccion: String
+ -  telefono: Int
+
+--
+
++ consultarCodSuc()
+
++ imprimirDatosSuc()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>440</y><w>150</w><h>100</h></coordinates><panel_attributes>Main
+--
+
+AgenciaDeViajes agencia
+
+Sistema sistema
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>170</x><y>620</y><w>210</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Interfaz&gt;&gt;
+UsuarioCliente
+--
+atributos
+--
+consultarReserva(codTur,nombre)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>650</y><w>130</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Interfaz&gt;&gt;
+UsuarioVendedor
+--
+atributos
+--
+consultarClientes()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>600</x><y>620</y><w>150</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Interfaz&gt;&gt;
+UsuarioAdministrador
+--
+atributos
+--
+consultarVendedore()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>600</x><y>770</y><w>150</w><h>90</h></coordinates><panel_attributes>Administrador
+--
+atributos
+--
+consultarVendedore()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>780</y><w>140</w><h>70</h></coordinates><panel_attributes>Vendedor
+--
+atributos
+--
+consultarClientes()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>750</y><w>200</w><h>80</h></coordinates><panel_attributes>Cliente
+--
+atributos
+--
+consultarReserva(codTur,nombre)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>880</y><w>200</w><h>160</h></coordinates><panel_attributes>Sistema
+--
+- Cliente usuarioCliente
+- Vendedor usuVendedor
+- Administrador usuAdmin
+- AgenciaDeViajes agencia
+- Usuarios usuarioActual
+--
++Usuario obtenerUsuarioActual()
++ Loguearse()
+Sistema(AgenciaDeViajes agencia)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>900</y><w>140</w><h>50</h></coordinates><panel_attributes>Usuarios
+--
+atributos
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>850</y><w>80</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;80;60;80;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>500</x><y>840</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>820</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>730</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>700</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>700</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>660</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>690</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>620</y><w>250</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;230;10</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>820</y><w>150</w><h>140</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>130;120;10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>530</y><w>30</w><h>370</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;350;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>120</y><w>30</w><h>340</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;320</additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>120</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>70</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>150</y><w>110</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;40;90;40</additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>150</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>880</x><y>380</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>740</x><y>510</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>950</x><y>710</y><w>150</w><h>160</h></coordinates><panel_attributes>Hospedaje
+--
+
+-	Regimen regimen
+-	fechaLleg :Date
+-	fechaPart:Date
+
+--
+consultarFLlegadal()
+consultarFPartida()
+consultarRegimen()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1070</x><y>380</y><w>30</w><h>350</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;330</additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>840</y><w>150</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>130;10;130;70;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>850</y><w>420</w><h>170</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>400;10;400;150;10;150</additional_attributes></element></diagram>
