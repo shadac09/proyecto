@@ -32,28 +32,31 @@ public class Administrador extends Usuario implements MenuAdministrador, Strateg
 
     @Override
     public void menuUsuario() {
-        System.out.println("***********************************************************************************************");
-        System.out.println("*  MENU DE USUARIO DE ADMINISTRADOR                                                           *");
-        System.out.println("***********************************************************************************************");
-        System.out.println("*  INGRESE UNA OPCION                                                                         *");
-        System.out.println("* 1- Dar de Alta un Servicio              2- Dar de Baja un Servicio                          *");
-        System.out.println("* 3- Listar Servicios                     4- Listar Clientes                                  *");
-        System.out.println("* 5- Listar Vendedores                    6- Listar Administradores                           *");
-        System.out.println("* 7- Dar de Alta un Usuario               8- Dar de Baja un Usuario                           *");
-        System.out.println("* 9- Listar Sucursales                    10- Crear Sucursal                                  *");
-        System.out.println("* 11- Listar Servicios                    12- Consultar Reservas                              *");
-        System.out.println("* 13- Generar una Reserva                 14-Eliminar una Reserva                             *");
-        System.out.println("* 15- Salir                                                                                   *");
-        System.out.print("opcion--> ");
-        scanner.nextInt();
 
-        while( opcion <1 || opcion>15){
+        while(opcion!= 15) {
+            System.out.println("***********************************************************************************************");
+            System.out.println("*  MENU DE USUARIO DE ADMINISTRADOR                                                           *");
+            System.out.println("***********************************************************************************************");
+            System.out.println("*  INGRESE UNA OPCION                                                                         *");
+            System.out.println("* 1- Dar de Alta un Servicio              2- Dar de Baja un Servicio                          *");
+            System.out.println("* 3- Listar Servicios                     4- Listar Clientes                                  *");
+            System.out.println("* 5- Listar Vendedores                    6- Listar Administradores                           *");
+            System.out.println("* 7- Dar de Alta un Usuario               8- Dar de Baja un Usuario                           *");
+            System.out.println("* 9- Listar Sucursales                    10- Crear Sucursal                                  *");
+            System.out.println("* 11- Listar Servicios                    12- Consultar Reservas                              *");
+            System.out.println("* 13- Generar una Reserva                 14-Eliminar una Reserva                             *");
+            System.out.println("* 15- Salir                                                                                   *");
             System.out.print("opcion--> ");
-            scanner.nextInt();
-        }
-        gestionarOpcion(opcion);
-       // while (opcion != 14 && opcion)
+            opcion = scanner.nextInt();
 
+            while (opcion < 1 || opcion > 15) {
+                System.out.print("opcion--> ");
+                opcion = scanner.nextInt();
+            }
+
+            gestionarOpcion(opcion);
+            // while (opcion != 14 && opcion)
+        }
     }
 
     private void gestionarOpcion( int opcion){
@@ -76,11 +79,13 @@ public class Administrador extends Usuario implements MenuAdministrador, Strateg
                              }
                            }
                     break;
-            case 2 :   System.out.println("INGRESE CÓDIGO DE SERVICIO(Número de Vuelo o Código de Hotel ");
+            case 2 :
+                       System.out.println("INGRESE CÓDIGO DE SERVICIO(Número de Vuelo o Código de Hotel ");
                         darDeBajaServicio( seleccionarUnServicio() );
                 break;
             case 3 :
                   mostrarServicios();
+                  break;
             case 4 :
                   mostrarServicios();
                 break;
@@ -88,6 +93,7 @@ public class Administrador extends Usuario implements MenuAdministrador, Strateg
                      agregarUnaSucursal();
                 break;
         }
+        System.out.print("retorno");
     }
 
     private Sucursal seleccionarSucursal(){
@@ -230,11 +236,17 @@ public class Administrador extends Usuario implements MenuAdministrador, Strateg
         return this.baseDeDatos.obtenerServicios( );
     }
     public void mostrarServicios(){
-        List<Servicios> stmp = obtenerServicios();
+        List<Servicios> stmp;
+        try {
+              stmp = obtenerServicios();
+            for(Servicios s : stmp){
+                System.out.println(" CÓDIGO DE SERVICIO : " + s.codigoDeServicio() +"SERVICIO : "+ s.tipoDeServicio);
+            }
+       }catch (Exception e){
+            System.out.println(" LA LISTA DE SERVICIOS ESTA VACIA " );
+       }
 
-        for(Servicios s : stmp){
-            System.out.println(" CÓDIGO DE SERVICIO : " + s.codigoDeServicio() +"SERVICIO : "+ s.tipoDeServicio);
-        }
+
     }
 
     //--------------------------------------------------------------------------
