@@ -1,5 +1,7 @@
 package Servicios;
-
+/**
+ * @author Diego A. Cesarin
+ */
 public class Asientos {
 
     private int numero;

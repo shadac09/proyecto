@@ -1,7 +1,9 @@
 package Servicios;
 
 import java.util.Date;
-
+/**
+ * @author Diego A. Cesarin
+ */
 public class Habitacion {
 
     private int precio;

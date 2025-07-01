@@ -6,7 +6,9 @@ import Usuarios.Usuario;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * @author Diego A. Cesarin
+ */
 public class Vuelo extends Servicios {
 
     private int numeroDeVuelo;

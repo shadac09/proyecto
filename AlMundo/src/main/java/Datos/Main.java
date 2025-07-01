@@ -1,9 +1,9 @@
 package Datos;
 
-import Usuarios.Administrador;
-import Usuarios.Cliente;
-import Usuarios.Vendedor;
 
+/**
+ * @author Diego A. Cesarin
+ */
 public class Main {
 
     private static BaseDeDatos baseDeDatos;

@@ -1,9 +1,8 @@
 package Menu;
 
-
-import Usuarios.Usuario;
-
-import java.util.List;
+/**
+ * @author Diego A. Cesarin
+ */
 
 public  interface MenuCliente extends MenuBDCliente{
 

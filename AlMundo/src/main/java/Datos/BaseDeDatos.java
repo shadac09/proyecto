@@ -9,6 +9,9 @@ import Usuarios.Vendedor;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * @author Diego A. Cesarin
+ */
 
 public  class BaseDeDatos implements MenuBDAdministrador {
 

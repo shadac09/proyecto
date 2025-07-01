@@ -1,5 +1,8 @@
 package Datos;
 
+/**
+ * @author Diego A. Cesarin
+ */
 import Usuarios.Administrador;
 import Usuarios.Cliente;
 import Usuarios.Usuario;

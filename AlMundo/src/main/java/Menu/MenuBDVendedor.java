@@ -1,5 +1,7 @@
 package Menu;
-
+/**
+ * @author Diego A. Cesarin
+ */
 import Servicios.Servicios;
 import Usuarios.Cliente;
 import Usuarios.Vendedor;

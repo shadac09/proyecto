@@ -1,9 +1,11 @@
 package Menu;
 
-import Servicios.Servicios;
+
 import Usuarios.Usuario;
 
-import java.util.List;
+/**
+ * @author Diego A. Cesarin
+ */
 
 public interface MenuVendedor extends MenuCliente , MenuBDVendedor{
 

@@ -6,6 +6,9 @@ import Menu.StrategyMenu;
 
 import java.util.List;
 
+/**
+ * @author Diego A. Cesarin
+*/
 public class Cliente extends  Usuario  implements MenuCliente, StrategyMenu {
 
    private String codigoTurista;

@@ -6,7 +6,9 @@ import Menu.StrategyMenu;
 import Servicios.Servicios;
 
 import java.util.List;
-
+/**
+ * @author Diego A. Cesarin
+ */
 public class Vendedor extends Usuario implements MenuVendedor, StrategyMenu {
 
     private String nombre ;

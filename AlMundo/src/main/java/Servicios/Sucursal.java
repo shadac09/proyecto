@@ -1,7 +1,9 @@
 package Servicios;
 
 import java.util.List;
-
+/**
+ * @author Diego A. Cesarin
+ */
 public class Sucursal  {
     private String codSucursal;
     private String direccion;

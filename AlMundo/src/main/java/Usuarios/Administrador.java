@@ -10,7 +10,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ * @author Diego A. Cesarin
+ */
 public class Administrador extends Usuario implements MenuAdministrador, StrategyMenu {
 
     private String idUsuario;

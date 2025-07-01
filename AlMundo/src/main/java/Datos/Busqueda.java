@@ -1,5 +1,7 @@
 package Datos;
-
+/**
+ * @author Diego A. Cesarin
+ */
 import Menu.StrategyMenu;
 import Usuarios.Usuario;
 
