@@ -1,0 +1,194 @@
+<diagram program="umletino" version="15.1"><zoom_level>3</zoom_level><element><id>UMLClass</id><coordinates><x>270</x><y>501</y><w>126</w><h>60</h></coordinates><panel_attributes>&lt;&lt;Abstract&gt;&gt;
+ServicioContrado
+--
+tipoDeServicio:String
+nombreEmpresa:String
+idServicio: String
+--
++Servicio (String tipoDeServicio, String nombreEmpresa, String idServicio)
++Servicio (String tipoDeServicio, String idServio)
++getTipoDeServicio(): String
++getNombreEmpresa(): String
++getIdServicio(): String
++mostrarServicio():void
++toString(): String </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>138</x><y>696</y><w>90</w><h>45</h></coordinates><panel_attributes>Sucursal
+--
+-  codSucursal:String
+ -  direccion: String
+ -  telefono: Int
+--
+Sucursal(String codSucursal, String direccion, int telefono)
+getCodSucursal(): String
+getDireccion(): String
+getTelefonol(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>618</x><y>480</y><w>159</w><h>87</h></coordinates><panel_attributes>Cliente
+--
+-pasajesTuristaReservados: int 
+-pasajesPrimeraReservados: int 
+-habitacionesReservadas: int 
+-usuarioActul: Usuario 
+--
++Cliente(String nombre, String apellido, String id_user, String Password, int Dni, String mail)
++getServicioContrado(): ArrayList&lt;Servicio&gt;
++getHabitacionesReservadas(): int
++setHabitacionesReservadas(int habitacionesReservadas): void 
++getPasajesTuristaReservados(): int 
++setPasajesTuristaReservados(int pasajesTuristaReservados): void 
++getPasajesPrimeraReservados(): int 
++setPasajesPrimeraReservados(int pasajesPrimeraReservados): void
++inciarSesion(BaseDeDatos baseDeDatos, Usuario usuarioActul): boolean 
++menu(BaseDeDatos baseDeDatos): void 
+-consultar (MenuCliente trabajar, BaseDeDatos baseDeDatos): void 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>273</x><y>381</y><w>117</w><h>84</h></coordinates><panel_attributes>BaseDeDatos
+--
+
+--
++BaseDeDatos()
++getUsaurio():ArrayList&lt;Usuario&gt;
++getSucursal():ArrayList&lt;Sucursal&gt;
++getServicio():ArrayList&lt;Servicio&gt;
++verificarCrdenciales(String credenciales): Usuario
++buscarUsuario(String id): Usuario
++buscarPorTipoDeUsuario(String id, String tipoDeUsuario): Usuario
++buscarServicio(String id): Servicio 
++buscarSucursal(String id): Sucursal
++mostrarServicios(): void
++mostrarDatosUsuario(Usuario per): void 
++mostrarDatosServicios(): void 
++mostrarDatosSucursales(): void 
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>471</x><y>525</y><w>108</w><h>84</h></coordinates><panel_attributes>&lt;&lt;Abstract&gt;&gt;
+Usuario
+--
+nombre:String
+apellido:String
+id_user:String
+password:String
+dni:int
+telefono:int
+mail:String
+--
++Usuario(String,String,String,String,int,int,String)
++getNombre():String
++getApellido():String
++getId_User():String
++getPassword():String
++buscarCredenciales(String): boolean
++iinciarSesion(BaseDeDatos baseDeDatos, Usuario usuarioActul): boolean
++toString(): String </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>291</y><w>162</w><h>36</h></coordinates><panel_attributes>Vendedor
+--
+Usuario usuarioActul
+--
++Vendedor(String nombre, String apellido, String id_user, String Password, int Dni, String mail)
++ inciarSesion(BaseDeDatos baseDeDatos, Usuario usuarioActul): boolean
++menu(BaseDeDatos baseDeDatos): void 
+-vender(MenuVendedor trabajar, BaseDeDatos baseDeDatos): void </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>507</x><y>192</y><w>171</w><h>36</h></coordinates><panel_attributes>Administrador
+--
+--
+Usuario usuarioActul
+--
++Administrador (String nombre, String apellido, String id_user, String Password, int Dni, String mail)
++ inciarSesion(BaseDeDatos baseDeDatos, Usuario usuarioActul): boolean
++menu(BaseDeDatos baseDeDatos): void 
+-administrar (MenuVendedor trabajar, BaseDeDatos baseDeDatos): void </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>579</x><y>27</y><w>84</w><h>24</h></coordinates><panel_attributes>ABMUsuario
+--
++menu(BaseDeDatos baseDeDatos): void
+-altaUsuario(BaseDeDatos baseDeDatos): void
+-bajaUsuario(BaseDeDatos baseDeDatos): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>186</x><y>411</y><w>96</w><h>291</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>300;10;10;10;10;950</additional_attributes></element><element><id>Relation</id><coordinates><x>387</x><y>396</y><w>90</w><h>165</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>280;530;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>357</x><y>645</y><w>261</w><h>66</h></coordinates><panel_attributes>Hotel
+--
+-	codigoHotel:Int
+-	direccion:String
+-	telefono:Int
+-	email: String
+-	plazasDisp: Int
+--
++Hotel(String codHotel, String direccion, int telefono, String email, int plazasDisponibles, String tipoDeServicio, String nombreEmpresa, String idServicio)
++Hotel(String tipoDeServicio, String idServio)
++getTelefono(): int
++getEmail(): int
++getPlazasDisponibles(): int
++mostrarServicio(): void
++modificarPlazas(int cantidad): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>630</y><w>93</w><h>78</h></coordinates><panel_attributes>Vuelo
+--
+-  numVuelo : Integer
+-  origen : String
+-  destino : String
+-  numPlazas : Integer
+-  tipoClase:String
+--
++Vuelo (String origen, String destino, int plazasTotales, int plazasTuristaDisponibles, int clasePrimeraDisponible, String tipoDeServicio, String nombreEmpresa, String idServicio)
++Vuelo (String tipoDeServicio, String idServio)
++String getOrigen()
++getDestino(): String 
++getPlazasTotales(): int 
++getClaseTuristaDisponibles(): int 
++getClasePrimeraDisponibles(): int 
++mostrarServicio(): void 
++modificarPlazasTuristas(int cantidad): void 
++modificarPlazasPrimera(int cantidad): void 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>477</x><y>201</y><w>36</w><h>330</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;1080;10;80;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>486</x><y>303</y><w>30</w><h>228</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;740;10;20;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>495</x><y>495</y><w>129</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;100;10;10;410;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>660</x><y>138</y><w>102</w><h>24</h></coordinates><panel_attributes>&lt;&lt;intreface&gt;&gt;
+MenuAdministrador
+--
+menu(BaseDeDatos baseDeDatos):void
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>801</x><y>483</y><w>102</w><h>24</h></coordinates><panel_attributes>&lt;&lt;intreface&gt;&gt;
+MenuCliente
+--
+menu(BaseDeDatos baseDeDatos): void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>642</x><y>336</y><w>102</w><h>24</h></coordinates><panel_attributes>&lt;&lt;intreface&gt;&gt;
+MenuVendedor
+--
+menu(BaseDeDatos baseDeDatos): void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>699</x><y>237</y><w>111</w><h>30</h></coordinates><panel_attributes>ABMCliente
+--
+--
++menu(BaseDeDatos baseDeDatos): void
+-altaCliente(BaseDeDatos baseDeDatos): void 
+-asignarReserva(BaseDeDatos baseDeDatos, Cliente user): void
+-asignarSucursal(BaseDeDatos baseDeDatos, Cliente user): void </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>690</x><y>12</y><w>93</w><h>33</h></coordinates><panel_attributes>ABMServicio
+--
++menu(BaseDeDatos baseDeDatos): void
+-altaServicioVuelo(BaseDeDatos baseDeDatos): void
+-bajaServicioVuelo(BaseDeDatos baseDeDatos) :void
+-altaServicioHotel(BaseDeDatos baseDeDatos): void
+-bajaServicioHotel(BaseDeDatos baseDeDatos): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>822</x><y>543</y><w>78</w><h>33</h></coordinates><panel_attributes>ConsultaCliente
+--
+menu(BaseDeDatos baseDeDatos): void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>654</x><y>387</y><w>63</w><h>33</h></coordinates><panel_attributes>ConsultaVendedor
+--
+menu(BaseDeDatos baseDeDatos): void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>519</x><y>72</y><w>63</w><h>33</h></coordinates><panel_attributes>ConsultaAdministrador
+--
+menu(BaseDeDatos baseDeDatos)
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>777</x><y>66</y><w>87</w><h>21</h></coordinates><panel_attributes>ABMSucursal
+--
+menu(BaseDeDatos baseDeDatos): void 
+-altaSucursal(BaseDeDatos baseDeDatos): void 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>564</x><y>102</y><w>114</w><h>42</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>360;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>618</x><y>48</y><w>75</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>230;300;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>735</x><y>42</y><w>12</w><h>102</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;320;20;10</additional_attributes></element><element><id>Relation</id><coordinates><x>753</x><y>84</y><w>48</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;180;140;10</additional_attributes></element><element><id>Relation</id><coordinates><x>621</x><y>159</y><w>69</w><h>39</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>210;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>264</y><w>9</w><h>78</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;240;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>684</x><y>357</y><w>9</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>597</x><y>324</y><w>51</w><h>33</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>150;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>774</x><y>492</y><w>33</w><h>9</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>849</x><y>504</y><w>9</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>312</x><y>462</y><w>9</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>294</x><y>558</y><w>9</w><h>78</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;240</additional_attributes></element><element><id>Relation</id><coordinates><x>327</x><y>558</y><w>75</w><h>93</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;230;290</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>159</y><w>24</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;60;260</additional_attributes></element><element><id>Relation</id><coordinates><x>372</x><y>558</y><w>270</w><h>78</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;170;240;870;240;880;30</additional_attributes></element><element><id>Relation</id><coordinates><x>225</x><y>564</y><w>477</w><h>174</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;550;1570;560;1560;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>234</y><w>63</w><h>18</h></coordinates><panel_attributes>main
+--
+void main(String[] args)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>261</y><w>63</w><h>24</h></coordinates><panel_attributes>VerificarDato
+--
++validarIngreso(String dato): &lt;static&gt;boolean
++validarIngreso(int dato): &lt;static&gt;boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>291</y><w>75</w><h>39</h></coordinates><panel_attributes>VistaConsola
+--
++leerString(String texto): &lt;static&gt;String 
++leerNro(String texto): &lt;static&gt;int 
++siNo(String texto): &lt;static&gt;boolean
++mostrarTexto(String texto): &lt;static&gt;void 
++mostrarTexto(int num): &lt;static&gt;void 
++validarSiNo(String texto): &lt;static&gt;boolean 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>336</y><w>63</w><h>30</h></coordinates><panel_attributes>Sistema
+--
+-user: String
+-pass: String
+-validar: boolean
+--
+controlDeIngrese(): void</panel_attributes><additional_attributes></additional_attributes></element></diagram>

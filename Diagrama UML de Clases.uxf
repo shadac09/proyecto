@@ -1,0 +1,174 @@
+<diagram program="umletino" version="15.1"><zoom_level>6</zoom_level><element><id>UMLClass</id><coordinates><x>342</x><y>690</y><w>162</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Abstract&gt;&gt;
+ServicioContrado
+--
+tipoDeServicio:String
+nombreEmpresa:String
+--
+mostrarServicio():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>690</y><w>180</w><h>114</h></coordinates><panel_attributes>Sucursal
+--
+-  codSucursal:String
+ -  direccion: String
+ -  telefono: Int
+- List&lt;ServicioContratado&gt; servicios
+
+--
++ Sucursal( codSucursal, direccion, telefono )
+
++ imprimirDatosSuc() : void
+
++ solicitarListaServicios() : List&lt;Servicios&gt; &lt;Static&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>258</y><w>96</w><h>54</h></coordinates><panel_attributes>Cliente
+--
+codTurita:String
+direccion:String
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>84</x><y>456</y><w>156</w><h>72</h></coordinates><panel_attributes>Sistema
+--
+- usuario: ArrayList&lt;Usuario&gt;
+- sucursal: ArrayList&lt;Sucursal&gt;
+--
++Sistema( )
++getPersona():ArrayList&lt;Usuario&gt;
++buscarUsuario(String): Persona
+
+
+
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>432</y><w>216</w><h>180</h></coordinates><panel_attributes>&lt;&lt;Abstract&gt;&gt;
+Usuario
+--
+nombre:String
+apellido:String
+id_user:String
+password:String
+dni:int
+telefono:int
+mail:String
+fechaDeAlta:Date
+--
+Persona(nombre,apellido,id_user,password,mail,fechaDeAlta)
+getNombre():String
+getApellido():String
+getId_User():String
+getPassword():String
+buscarCredenciales(String): void
+iniciarSesion(Sistema): boolean
+consultar(ConsultaStrategy): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1386</x><y>486</y><w>168</w><h>78</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Hoteleria
+--
+
+--
++ consultarHuesped( nombre , apellidos ): Turista
+
++nuevoHuesped( )
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1386</x><y>390</y><w>168</w><h>78</h></coordinates><panel_attributes>&lt;&lt;Interfaz&gt;&gt;
+Traslados
+--
+
+--
+
++ consultarPasajero( nombre, apellidos  ) : Turista
+
++ nuevoPasajero( )
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1386</x><y>720</y><w>126</w><h>54</h></coordinates><panel_attributes>&lt;&lt;Interfaz&gt;&gt;
+AltaServicio
+--
+crearServicio( codSucursal ) : void
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1386</x><y>582</y><w>138</w><h>54</h></coordinates><panel_attributes>&lt;&lt;Interfaz&gt;&gt;
+BajaServicio
+--
+eliminarServicio( codSucursal ) : void
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>606</x><y>378</y><w>132</w><h>60</h></coordinates><panel_attributes>&lt;&lt;intreface&gt;&gt;
+consultaStrategy
+--
+consultar():void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>882</x><y>36</y><w>204</w><h>48</h></coordinates><panel_attributes>&lt;&lt;intreface&gt;&gt;
+AdministracionDeSevicioStrategy
+--
+administrar(Sistema sistema):void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>384</x><y>198</y><w>60</w><h>246</h></coordinates><panel_attributes>lt=-&gt;&gt;</panel_attributes><additional_attributes>10;390;10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>366</x><y>54</y><w>78</w><h>390</h></coordinates><panel_attributes>lt=-&gt;&gt;</panel_attributes><additional_attributes>10;630;10;10;110;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>174</y><w>96</w><h>54</h></coordinates><panel_attributes>Vendedor
+--
+atributos
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>36</y><w>96</w><h>54</h></coordinates><panel_attributes>Administrador
+--
+atributos
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>726</x><y>114</y><w>126</w><h>66</h></coordinates><panel_attributes>UsuariosABM
+--
+altaBajaModifiacion(Sistema sistema):void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>726</x><y>30</y><w>126</w><h>60</h></coordinates><panel_attributes>ClientesABM
+--
+altaBajaModifiacion(Sistema sistema):void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>774</x><y>534</y><w>126</w><h>30</h></coordinates><panel_attributes>ConsutaReserva
+--
+consultar():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>774</x><y>492</y><w>126</w><h>30</h></coordinates><panel_attributes>ConsutaClientes
+--
+consultar():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>774</x><y>450</y><w>126</w><h>30</h></coordinates><panel_attributes>ConsutaUsuarios
+--
+consultar():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>708</x><y>432</y><w>78</w><h>90</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;10;10;130;110;130</additional_attributes></element><element><id>Relation</id><coordinates><x>690</x><y>432</y><w>96</w><h>132</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;10;10;200;140;200</additional_attributes></element><element><id>UMLClass</id><coordinates><x>558</x><y>84</y><w>138</w><h>48</h></coordinates><panel_attributes>&lt;&lt;intreface&gt;&gt;
+AdministrarUsuariosStrategy
+--
+altaBajaModifiacion(Sistema sistema):void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1386</x><y>654</y><w>126</w><h>48</h></coordinates><panel_attributes>&lt;&lt;intreface&gt;&gt;
+AdministrarServicios
+--
+altaBajaModifiacion():void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>162</x><y>522</y><w>18</w><h>180</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;280;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>234</x><y>486</y><w>138</w><h>18</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>210;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>432</y><w>66</w><h>48</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;10;10;60;90;60</additional_attributes></element><element><id>Relation</id><coordinates><x>246</x><y>720</y><w>108</w><h>18</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>160;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>564</x><y>702</y><w>180</w><h>96</h></coordinates><panel_attributes>Hotel
+--
+-	codigoHotel:Int
+-	direccion:String
+-	ciudad:String
+-	telefono:Int
+-	email: String
+-	plazasDisp: Int
+-	tipoPension:String
+-	habitacion: ArrayList&lt;Habitacion&gt;
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>564</x><y>882</y><w>180</w><h>90</h></coordinates><panel_attributes>Vuelo
+--
+-  numVuelo : Integer
+-  fecha : Date
+-  origen : String
+-  destino : String
+-  numPlazas : Integer
+-  tipoClase:String
+--
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>486</x><y>774</y><w>90</w><h>156</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>130;240;10;240;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>498</x><y>732</y><w>78</w><h>18</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1386</x><y>324</y><w>138</w><h>54</h></coordinates><panel_attributes>&lt;&lt;intreface&gt;&gt;
+AdministracionDeSucursalesStrategy
+--
+servicioContratado(Cliente turista,Sistema sistema):void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>402</x><y>276</y><w>42</w><h>168</h></coordinates><panel_attributes>lt=-&gt;&gt;</panel_attributes><additional_attributes>10;260;10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>522</x><y>126</y><w>66</w><h>78</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;110;90;110;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>486</x><y>84</y><w>84</w><h>48</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;10;10;60;120;60</additional_attributes></element><element><id>Relation</id><coordinates><x>522</x><y>78</y><w>390</w><h>144</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;220;630;220;630;10</additional_attributes></element><element><id>Relation</id><coordinates><x>486</x><y>0</y><w>420</w><h>48</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;60;10;10;680;10;680;60</additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>396</y><w>150</w><h>48</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;60;10;10;230;10</additional_attributes></element><element><id>Relation</id><coordinates><x>636</x><y>126</y><w>102</w><h>48</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;10;10;60;150;60</additional_attributes></element><element><id>Relation</id><coordinates><x>636</x><y>48</y><w>102</w><h>48</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;60;10;10;150;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1044</x><y>126</y><w>126</w><h>60</h></coordinates><panel_attributes>ServicioABM
+--
+administrar(Sistema sistema):void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1044</x><y>204</y><w>126</w><h>60</h></coordinates><panel_attributes>AsignarSevicio
+--
+administrar(Sistema sistema):void
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>774</x><y>582</y><w>126</w><h>30</h></coordinates><panel_attributes>ConsutaServicio
+--
+consultar():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>672</x><y>432</y><w>114</w><h>180</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;10;10;280;170;280</additional_attributes></element><element><id>Relation</id><coordinates><x>1002</x><y>78</y><w>54</w><h>90</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;10;10;130;70;130</additional_attributes></element><element><id>Relation</id><coordinates><x>984</x><y>78</y><w>72</w><h>168</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>10;10;10;260;100;260</additional_attributes></element><element><id>UMLClass</id><coordinates><x>780</x><y>804</y><w>180</w><h>72</h></coordinates><panel_attributes>habitacion
+--
+-precio:int
+-cantPersonas:final int
+-categoria:String
+-fecha: date
+-regimenDeHospedaje:String
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>792</y><w>96</w><h>66</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;90;10;90;10;10</additional_attributes></element></diagram>
